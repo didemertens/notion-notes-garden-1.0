@@ -8,7 +8,7 @@ export default function Home() {
       </div>
       <main className="center grow flex-col text-center">
         <h1 className="text-hero text-primary">Quiz Garden</h1>
-        <p className="text-large text-primary mb-l" style={{ maxWidth: '35ch' }}>
+        <p className="text-large text-primary mb-l" data-width="prose">
           Turn your Notion notes into interactive quizzes. 
           Finally remember what you wrote.
         </p>

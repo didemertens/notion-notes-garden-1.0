@@ -22,7 +22,7 @@ Click the **Get Started** button on the homepage to begin the process of importi
 
 ## Theme System
 
-This app supports both light and dark themes. You can toggle between them using the button in the top right corner. The initial theme adapts to your system preference and network speed:
+This app supports both light and dark themes. You can toggle between them using the button in the top-right corner. The initial theme adapts to your system preference and network speed:
 - On slow networks, the app defaults to the light theme for faster loading.
 - On fast networks, your saved or system theme preference is used.
 
