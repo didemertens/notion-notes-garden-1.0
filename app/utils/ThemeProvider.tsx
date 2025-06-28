@@ -67,17 +67,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       if (!hasUserToggled) {
         // On slow networks, always start with light theme unless user toggles
         initialTheme = 'light';
-      } else {
-        // User has toggled during this session, keep current theme
-        return;
+        setTheme(initialTheme);
+        applyTheme(initialTheme);
       }
+      // If user has toggled, do not change theme, but still set isReady
     } else {
       // On fast networks, use saved theme or fall back to system
       initialTheme = getSavedTheme() ?? getSystemTheme();
+      setTheme(initialTheme);
+      applyTheme(initialTheme);
     }
-
-    setTheme(initialTheme);
-    applyTheme(initialTheme);
     setIsReady(true);
   }, [isSlowNetwork, hasUserToggled]);
 

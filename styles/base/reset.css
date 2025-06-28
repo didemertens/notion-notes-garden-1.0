@@ -47,15 +47,9 @@ button {
 }
 
 /* Focus Styles */
-*:focus {
+*:focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
-}
-
-/* Remove default focus for elements that will have custom focus styles */
-button:focus,
-a:focus {
-  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
