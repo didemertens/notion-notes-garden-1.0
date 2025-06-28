@@ -16,15 +16,14 @@ export default async function NotionPage({
         {notionPages.map((page) => {
           return (
             <li className="card mb-m" key={page?.id}>
-              <div>
-                <h2 className="text-medium">{page?.title}</h2>
-                <Link
-                  className="button button--primary button--small mt-auto"
-                  href={`/notion/${page?.id}`}
-                >
-                  Generate quiz
-                </Link>
-              </div>
+              <h2 className="text-medium">{page?.title}</h2>
+              <Link
+                className="button button--primary button--small mt-auto"
+                href={`/notion/${page?.id}`}
+                data-state="reversed"
+              >
+                Generate quiz →
+              </Link>
             </li>
           );
         })}

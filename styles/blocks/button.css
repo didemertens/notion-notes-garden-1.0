@@ -33,6 +33,17 @@ button:focus {
   color: var(--color-button-hover-text);
 }
 
+/* Reversed colours */
+.button--primary[data-state='reversed'] {
+  background-color: var(--color-button-reversed);
+  color: var(--color-button-reversed-text);
+}
+
+.button--primary[data-state='reversed']:hover {
+  background-color: var(--color-button-reversed-hover);
+  color: var(--color-button-reversed-hover-text);
+}
+
 /* Button Sizes */
 .button--large {
   padding: var(--space-m) var(--space-l);

@@ -43,6 +43,10 @@
   --color-button-text: var(--color-charcoal-blue);
   --color-button-hover: var(--color-charcoal-blue);
   --color-button-hover-text: var(--color-white);
+  --color-button-reversed: var(--color-charcoal-blue);
+  --color-button-reversed-hover: var(--color-pink);
+  --color-button-reversed-text: var(--color-white);
+  --color-button-reversed-hover-text: var(--color-charcoal-blue);
   --color-focus: var(--color-charcoal-blue);
   --color-link: var(--color-charcoal-blue);
   --color-link-border: var(--color-blue);
@@ -62,6 +66,10 @@
   --color-button-text: var(--color-charcoal-blue);
   --color-button-hover: var(--color-blue);
   --color-button-hover-text: var(--color-charcoal-blue);
+  --color-button-reversed: var(--color-pink);
+  --color-button-reversed-hover: var(--color-blue);
+  --color-button-reversed-text: var(--color-charcoal-blue);
+  --color-button-reversed-hover-text: var(--color-charcoal-blue);
   --color-focus: var(--color-white);
   --color-link: var(--color-pink);
   --color-link-border: var(--color-charcoal-blue-light);

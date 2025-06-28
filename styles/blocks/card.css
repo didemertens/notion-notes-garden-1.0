@@ -4,6 +4,7 @@
 
 ul:has(> li.card) {
   width: 100%;
+  container-type: inline-size;
 }
 
 .card {
@@ -16,13 +17,15 @@ ul:has(> li.card) {
   background-color: var(--card-background-color);
   container-type: inline-size;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   gap: var(--space-s);
 }
 
-@container (max-width: 40rem) {
+@container (min-width: 40rem) {
   .card {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
