@@ -1,6 +1,6 @@
 # Quiz Garden
 
-Transform your Notion notes into interactive quizzes. Finally remember what you wrote.
+Transform your Notion notes into interactive quizzes.
 
 This is a [Next.js](https://nextjs.org) project that uses modern CSS architecture and responsive design principles.
 
