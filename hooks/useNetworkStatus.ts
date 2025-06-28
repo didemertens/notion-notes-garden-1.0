@@ -9,10 +9,10 @@ export function useNetworkStatus() {
     if (!('connection' in navigator)) {
       // Fallback: test network speed with a small request
       const start = performance.now();
-      fetch('/favicon.ico', { cache: 'no-cache' })
+      fetch('/api/health', { cache: 'no-cache' })
         .then(() => {
           const duration = performance.now() - start;
-          // If favicon takes more than 500ms, consider it slow
+          // If health check takes more than 500ms, consider it slow
           setIsSlowNetwork(duration > 500);
         })
         .catch(() => {

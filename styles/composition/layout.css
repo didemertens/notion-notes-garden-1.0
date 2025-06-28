@@ -9,11 +9,17 @@
   flex-direction: column;
 }
 
-/* Centered Content */
+/* Centered Content (Flexbox)
+   Use .center for flex centering. Add .grow for flex: 1 (growth).
+   Example: <div class="center grow"> ... </div>
+*/
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grow {
   flex: 1;
 }
 
@@ -27,11 +33,4 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-}
-
-/* Flex Center Utility */
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

@@ -1,5 +1,4 @@
-import { Leaf } from 'lucide-react';
-import ThemeToggle from './components/atoms/ThemeToggle';
+import ThemeToggle from '../components/atoms/ThemeToggle';
 
 export default function Home() {
   return (
@@ -7,7 +6,7 @@ export default function Home() {
       <div className="p-m flex-end">
         <ThemeToggle />
       </div>
-      <main className="center flex-col text-center">
+      <main className="center grow flex-col text-center">
         <h1 className="text-hero text-primary">Quiz Garden</h1>
         <p className="text-large text-primary mb-l" style={{ maxWidth: '35ch' }}>
           Turn your Notion notes into interactive quizzes. 

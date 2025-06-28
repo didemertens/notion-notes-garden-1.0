@@ -45,7 +45,19 @@ button:focus {
   color: var(--color-text);
   transition: transform 0.2s ease-in, opacity 0.2s ease;
   opacity: 0;
-  animation: fadeIn 0.3s ease-in-out forwards;
+  visibility: hidden;
+}
+
+.theme-toggle--ready {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: opacity 0.01s linear;
+  }
 }
 
 .theme-toggle:hover {

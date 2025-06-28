@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Sun, Moon } from 'lucide-react';
-import { useTheme } from '../../utils/ThemeProvider';
+import { useTheme } from '../providers/ThemeProvider';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme, isReady } = useTheme();
@@ -20,7 +20,7 @@ export default function ThemeToggle() {
       type="button"
       aria-label={label}
       onClick={toggleTheme}
-      className="theme-toggle h-12 w-12 flex items-center justify-center"
+      className="theme-toggle theme-toggle--ready h-12 w-12 flex items-center justify-center"
     >
       {icon}
     </button>
