@@ -1,5 +1,5 @@
 import { Leaf } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from './components/atoms/ThemeToggle';
 
 export default function Home() {
   return (

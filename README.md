@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiz Garden
+
+Transform your Notion notes into interactive quizzes. Finally remember what you wrote.
+
+This is a [Next.js](https://nextjs.org) project that uses modern CSS architecture and responsive design principles.
 
 ## Getting Started
 
@@ -6,31 +10,67 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## User Flow
 
-## Learn More
+Click the **Get Started** button on the homepage to begin the process of importing your Notion notes and generating interactive quizzes. (Further integration steps may be required in future versions.)
 
-To learn more about Next.js, take a look at the following resources:
+## Theme System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This app supports both light and dark themes. You can toggle between them using the button in the top right corner. The initial theme adapts to your system preference and network speed:
+- On slow networks, the app defaults to the light theme for faster loading.
+- On fast networks, your saved or system theme preference is used.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## CSS Architecture
 
-## Deploy on Vercel
+This project uses two key methodologies for scalable, maintainable CSS:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### CUBE CSS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+CUBE CSS is a methodology for writing scalable, maintainable CSS by organizing styles into four main layers:
+
+- **Composition:** Layout patterns and structural rules (e.g., `styles/composition/layout.css`).
+- **Utilities:** Single-purpose classes for spacing, colors, etc. (e.g., `styles/utilities/spacing.css`, `styles/utilities/colors.css`).
+- **Blocks:** Reusable, self-contained components (e.g., `styles/blocks/button.css`).
+- **Exceptions:** One-off overrides (not shown here, but would be used for special cases).
+
+Your main stylesheet (`styles/main.css`) imports these layers in the recommended CUBE order, ensuring a clear separation of concerns and predictable overrides. This structure makes it easy to scale and maintain your styles as the project grows.
+
+### Utopia Fluid Design
+
+[Utopia](https://utopia.fyi/) provides fluid typography and spacing that scales smoothly between breakpoints without media queries.
+
+**Typography Scale**: Uses `clamp()` functions to fluidly scale from 18px-20px base size
+- `--step--2` to `--step-5` for different text sizes
+- Example: `--step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem)`
+
+**Space Scale**: Fluid spacing tokens for consistent layouts
+- `--space-3xs` to `--space-3xl` for margins, padding, and gaps
+- Example: `--space-m: clamp(1.69rem, calc(1.62rem + 0.33vw), 1.88rem)`
+
+These tokens are defined in `styles/base/tokens.css` and used throughout the component styles via CSS custom properties.
+
+## Evals
+
+The `app/evals/` directory contains automated evaluation scripts for the app's AI features. Each eval defines a set of test cases, runs them through the AI model, and scores the results using metrics like factual accuracy and string similarity (e.g., Levenshtein distance). This helps ensure the quality and reliability of quiz generation and other AI-driven features.
+
+**Note:** For the evals/ai-sdk integration to work, you need to create a `.env` file in the project root with your `OPENAI_API_KEY`:
+
+```
+OPENAI_API_KEY=your-openai-api-key-here
+```
+
+### Running Evals
+
+To run the evals locally and watch for changes, use:
+
+```bash
+npm run eval:dev
+```
+
+This will use `evalite` to automatically run and re-run your evaluation scripts in `app/evals/` as you edit them.
