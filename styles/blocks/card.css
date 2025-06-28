@@ -9,13 +9,12 @@ ul:has(> li.card) {
 .card {
   --card-padding: var(--space-m);
 
+  font-weight: bold;
   padding: var(--card-padding);
+  border: 3px solid var(--card-border-color);
   border-radius: var(--radius-s);
   background-color: var(--card-background-color);
   container-type: inline-size;
-}
-
-.card > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +22,7 @@ ul:has(> li.card) {
 }
 
 @container (max-width: 40rem) {
-  .card > div {
+  .card {
     flex-direction: column;
   }
 }

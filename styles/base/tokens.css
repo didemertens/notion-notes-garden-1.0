@@ -30,18 +30,28 @@
   --radius-l: 1.5rem;
 
   /* Color Palette */
-  --color-white: #ffffff;
-  --color-charcoal-blue: #1a252f;
-  --color-pink: #b85c7a;
-  --color-green: #6b9556;
+  --color-white: #fffffe;
+  --color-charcoal-blue: #232946;
+  --color-pink: #eebbc3;
+  --color-blue: #b8c1ec;
+  --color-charcoal-blue-light: #2e3450;
 
   /* Light Theme Default */
-  --color-background: var(--color-white);
+  --color-background: var(--color-pink);
   --color-text: var(--color-charcoal-blue);
-  --color-button: var(--color-pink);
-  --color-button-hover: var(--color-green);
+  --color-button: var(--color-blue);
+  --color-button-text: var(--color-charcoal-blue);
+  --color-button-hover: var(--color-charcoal-blue);
+  --color-button-hover-text: var(--color-white);
   --color-focus: var(--color-charcoal-blue);
-  --card-background-color: rgba(0, 0, 0, 0.05);
+  --color-link: var(--color-charcoal-blue);
+  --color-link-border: var(--color-blue);
+  --color-link-border-hover: var(--color-charcoal-blue);
+  --card-background-color: var(--color-blue);
+  --card-border-color: var(--color-charcoal-blue);
+
+  /* Light Theme */
+  --light-color-background: var(--color-gray-100);
 }
 
 /* Dark Theme Override */
@@ -49,7 +59,13 @@
   --color-background: var(--color-charcoal-blue);
   --color-text: var(--color-white);
   --color-button: var(--color-pink);
-  --color-button-hover: var(--color-green);
+  --color-button-text: var(--color-charcoal-blue);
+  --color-button-hover: var(--color-blue);
+  --color-button-hover-text: var(--color-charcoal-blue);
   --color-focus: var(--color-white);
-  --card-background-color: rgba(255, 255, 255, 0.05);
+  --color-link: var(--color-pink);
+  --color-link-border: var(--color-charcoal-blue-light);
+  --color-link-border-hover: var(--color-blue);
+  --card-background-color: var(--color-charcoal-blue-light);
+  --card-border-color: black;
 }

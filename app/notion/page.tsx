@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { fetchCourses } from '@/lib/notion/fetchCourses';
+import { ArrowRight } from 'lucide-react';
 
 export default async function NotionPage() {
   const notionPages = await fetchCourses();
@@ -10,12 +12,15 @@ export default async function NotionPage() {
         {notionPages.map((page) => {
           return (
             <li className="card mb-m" key={page?.id}>
-              <div>
-                <h2 className="text-medium">{page?.title}</h2>
-                <button className="button button--primary button--small mt-auto">
-                  Generate quiz
-                </button>
-              </div>
+              <h2 className="text-medium">{page?.title}</h2>
+              <Link
+                className="link mt-auto"
+                href={`/notion/${page?.id}`}
+                aria-label={`Go to the ${page?.title} page`}
+              >
+                <span>Go to page</span>
+                <ArrowRight color="var(--color-link)" aria-hidden="true" />
+              </Link>
             </li>
           );
         })}

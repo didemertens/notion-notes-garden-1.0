@@ -1,0 +1,22 @@
+/* ==========================================================================
+   BLOCKS - LINK
+   ========================================================================== */
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link);
+  text-underline-offset: 0.2em;
+  border: 3px solid var(--color-link-border);
+  border-radius: var(--radius-s);
+  padding: var(--space-xs);
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.link:hover:not(:active):not(:focus) {
+  border: 3px solid var(--color-link-border-hover);
+}

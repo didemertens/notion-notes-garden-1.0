@@ -24,9 +24,11 @@ async function findCoursesPage(): Promise<PageObjectResponse | undefined> {
   return coursesPage;
 }
 
-export async function fetchCourses() {
+export async function fetchCourses({ id }: { id?: string } = {}) {
   // 1. Find the "Courses" page.
-  const coursesPage = await findCoursesPage();
+  const coursesPage = id
+    ? await notionClient.pages.retrieve({ page_id: id })
+    : await findCoursesPage();
 
   // 2. If the "Courses" page isn't found, return an empty array.
   if (!coursesPage) {

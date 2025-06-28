@@ -18,16 +18,19 @@ button:focus {
   text-decoration: none;
   transition: background-color 0.2s ease;
   cursor: pointer;
+  border: 3px solid var(--card-border-color);
+  font-weight: bold;
 }
 
 /* Button Variants */
 .button--primary {
   background-color: var(--color-button);
-  color: var(--color-white);
+  color: var(--color-button-text);
 }
 
 .button--primary:hover {
   background-color: var(--color-button-hover);
+  color: var(--color-button-hover-text);
 }
 
 /* Button Sizes */
