@@ -61,7 +61,7 @@ The `app/evals/` directory contains automated evaluation scripts for the app's A
 
 **Note:** For the evals/ai-sdk integration to work, you need to create a `.env` file in the project root with your `OPENAI_API_KEY`:
 
-```
+```bash
 OPENAI_API_KEY=your-openai-api-key-here
 ```
 
