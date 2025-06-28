@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useLayoutEffect } from 'react';
+import React, { createContext, useContext, useState, useLayoutEffect, useCallback, useMemo } from 'react';
 import { useNetworkStatus } from './hooks/useNetworkStatus';
 
 type Theme = 'light' | 'dark';
@@ -28,53 +28,79 @@ function getSystemTheme(): Theme {
   return 'light';
 }
 
-function applyTheme(theme: Theme) {
+function applyTheme(theme: Theme): void {
+  if (typeof document === 'undefined') return;
+  
   const root = document.documentElement;
   root.classList.remove('theme-light', 'theme-dark');
   root.classList.add(`theme-${theme}`);
+}
+
+function getSavedTheme(): Theme | null {
+  try {
+    const saved = localStorage.getItem('theme');
+    return (saved === 'light' || saved === 'dark') ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveTheme(theme: Theme): void {
+  try {
+    localStorage.setItem('theme', theme);
+  } catch {
+    // Ignore localStorage errors
+  }
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const { isSlowNetwork } = useNetworkStatus();
   const [theme, setTheme] = useState<Theme>('light');
   const [isReady, setIsReady] = useState(false);
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [hasUserToggled, setHasUserToggled] = useState(false);
 
   useLayoutEffect(() => {
-    if (!isInitialized) {
-      // Initial theme setup - only runs once
-      let initialTheme: Theme;
+    // Initial theme setup
+    let initialTheme: Theme;
 
-      if (isSlowNetwork) {
-        // On slow networks, always use system theme initially
-        initialTheme = getSystemTheme();
+    if (isSlowNetwork) {
+      if (!hasUserToggled) {
+        // On slow networks, always start with light theme unless user toggles
+        initialTheme = 'light';
       } else {
-        // On fast networks, use saved theme or fall back to system
-        const savedTheme = localStorage.getItem('theme') as Theme;
-        initialTheme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : getSystemTheme();
+        // User has toggled during this session, keep current theme
+        return;
       }
-
-      setTheme(initialTheme);
-      applyTheme(initialTheme);
-      setIsReady(true);
-      setIsInitialized(true);
+    } else {
+      // On fast networks, use saved theme or fall back to system
+      initialTheme = getSavedTheme() ?? getSystemTheme();
     }
 
-  }, [isSlowNetwork, isInitialized]);
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+    setIsReady(true);
+  }, [isSlowNetwork, hasUserToggled]);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     applyTheme(newTheme);
+    setHasUserToggled(true);
 
     // Only persist on fast networks
     if (!isSlowNetwork) {
-      localStorage.setItem('theme', newTheme);
+      saveTheme(newTheme);
     }
-  };
+  }, [theme, isSlowNetwork]);
+
+  const contextValue = useMemo(() => ({
+    theme,
+    toggleTheme,
+    isReady
+  }), [theme, toggleTheme, isReady]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, isReady }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
