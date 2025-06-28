@@ -1,0 +1,58 @@
+/* ==========================================================================
+   BLOCKS - BUTTON
+   ========================================================================== */
+
+button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-s) var(--space-m);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Button Variants */
+.button--primary {
+  background-color: var(--color-button);
+  color: var(--color-white);
+}
+
+.button--primary:hover {
+  background-color: var(--color-button-hover);
+}
+
+/* Button Sizes */
+.button--large {
+  padding: var(--space-m) var(--space-l);
+  font-size: var(--step-1);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: var(--space-2xs);
+  border-radius: 50%;
+  color: var(--color-text);
+  transition: transform 0.2s ease-in, opacity 0.2s ease;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2) rotate(30deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

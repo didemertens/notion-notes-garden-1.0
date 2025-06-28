@@ -1,0 +1,37 @@
+/* ==========================================================================
+   COMPOSITION - LAYOUT PATTERNS
+   ========================================================================== */
+
+/* Full Height Container */
+.full-height {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centered Content */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Text Center */
+.text-center {
+  text-align: center;
+}
+
+/* Flex End (for theme toggle positioning) */
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* Flex Center Utility */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
