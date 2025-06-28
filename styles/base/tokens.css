@@ -24,6 +24,11 @@
   --space-2xl: clamp(4.5rem, calc(4.33rem + 0.87vw), 5rem);
   --space-3xl: clamp(6.75rem, calc(6.49rem + 1.3vw), 7.5rem);
 
+  /* Border Radius */
+  --radius-s: 0.5rem;
+  --radius-m: 1rem;
+  --radius-l: 1.5rem;
+
   /* Color Palette */
   --color-white: #ffffff;
   --color-charcoal-blue: #1a252f;
@@ -36,6 +41,7 @@
   --color-button: var(--color-pink);
   --color-button-hover: var(--color-green);
   --color-focus: var(--color-charcoal-blue);
+  --card-background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Dark Theme Override */
@@ -45,4 +51,5 @@
   --color-button: var(--color-pink);
   --color-button-hover: var(--color-green);
   --color-focus: var(--color-white);
+  --card-background-color: rgba(255, 255, 255, 0.05);
 }

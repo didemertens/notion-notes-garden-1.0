@@ -1,0 +1,29 @@
+/* ==========================================================================
+   BLOCK - CARD
+   ========================================================================== */
+
+ul:has(> li.card) {
+  width: 100%;
+}
+
+.card {
+  --card-padding: var(--space-m);
+
+  padding: var(--card-padding);
+  border-radius: var(--radius-s);
+  background-color: var(--card-background-color);
+  container-type: inline-size;
+}
+
+.card > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+@container (max-width: 40rem) {
+  .card > div {
+    flex-direction: column;
+  }
+}

@@ -31,10 +31,10 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <div className="full-height">
-            <div className="p-m flex-end">
+            <div className="p-m place-top-right">
               <ThemeToggle />
             </div>
-            <main className="center grow flex-col text-center">{children}</main>
+            <main className="wrapper">{children}</main>
           </div>
         </ThemeProvider>
       </body>

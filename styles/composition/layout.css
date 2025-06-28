@@ -4,9 +4,13 @@
 
 /* Full Height Container */
 .full-height {
+  display: grid;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+
+/* This makes sibling elements stack on top of each other in the grid */
+.full-height > * {
+  grid-area: 1 / 1;
 }
 
 /* Centered Content (Flexbox)
@@ -28,9 +32,21 @@
   text-align: center;
 }
 
+/* Place grid item in top right corner */
+.place-top-right {
+  place-self: start end;
+  z-index: 1;
+}
+
 /* Flex End (for theme toggle positioning) */
 .flex-end {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+}
+
+.wrapper {
+  width: clamp(var(--space-3xl), 100%, 80ch);
+  margin-inline: auto;
+  padding-inline: var(--space-s);
 }

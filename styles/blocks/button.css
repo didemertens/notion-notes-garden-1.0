@@ -13,7 +13,7 @@ button:focus {
   justify-content: center;
   padding: var(--space-s) var(--space-m);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-s);
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s ease;
@@ -34,6 +34,12 @@ button:focus {
 .button--large {
   padding: var(--space-m) var(--space-l);
   font-size: var(--step-1);
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 1px solid var(--color-button);
+  color: var(--color-button);
 }
 
 /* Theme Toggle Button */

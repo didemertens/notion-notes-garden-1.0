@@ -17,6 +17,26 @@
 }
 
 /* Margin */
+.m-s {
+  margin: var(--space-s);
+}
+.m-m {
+  margin: var(--space-m);
+}
+.m-l {
+  margin: var(--space-l);
+}
+
+.mt-s {
+  margin-top: var(--space-s);
+}
+.mt-m {
+  margin-top: var(--space-m);
+}
+.mt-l {
+  margin-top: var(--space-l);
+}
+
 .mb-s {
   margin-bottom: var(--space-s);
 }
