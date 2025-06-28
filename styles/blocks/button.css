@@ -44,8 +44,15 @@ button:focus {
   border-radius: 50%;
   color: var(--color-text);
   transition: transform 0.2s ease-in, opacity 0.2s ease;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 .theme-toggle:hover {
   transform: scale(1.2) rotate(30deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
