@@ -3,9 +3,25 @@
    ========================================================================== */
 
 /* Text Colors */
-.text-primary { color: var(--color-text); }
+.text-primary {
+  color: var(--color-text);
+}
 
 /* Typography Sizes */
-.text-hero { font-size: var(--step-5); font-weight: 300; }
-.text-large { font-size: var(--step-2); }
-.text-body { font-size: var(--step-0); }
+.text-hero {
+  font-size: var(--step-5);
+  font-weight: 300;
+}
+.text-large {
+  font-size: var(--step-2);
+}
+.text-medium {
+  font-size: var(--step-1);
+}
+.text-body {
+  font-size: var(--step-0);
+}
+
+[data-width='prose'] {
+  max-width: 35ch;
+}

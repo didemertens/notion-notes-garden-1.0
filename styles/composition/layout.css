@@ -4,22 +4,38 @@
 
 /* Full Height Container */
 .full-height {
+  display: grid;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Centered Content */
+/* This makes sibling elements stack on top of each other in the grid */
+.full-height > * {
+  grid-area: 1 / 1;
+}
+
+/* Centered Content (Flexbox)
+   Use .center for flex centering. Add .grow for flex: 1 (growth).
+   Example: <div class="center grow"> ... </div>
+*/
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.grow {
   flex: 1;
 }
 
 /* Text Center */
 .text-center {
   text-align: center;
+}
+
+/* Place grid item in top right corner */
+.place-top-right {
+  place-self: start end;
+  z-index: 1;
 }
 
 /* Flex End (for theme toggle positioning) */
@@ -29,9 +45,8 @@
   align-items: flex-start;
 }
 
-/* Flex Center Utility */
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.wrapper {
+  width: clamp(var(--space-3xl), 100%, 80ch);
+  margin-inline: auto;
+  padding-inline: var(--space-s);
 }

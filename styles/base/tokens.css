@@ -4,38 +4,58 @@
 
 :root {
   /* Utopia Fluid Typography Scale (18px - 20px base) */
-  --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
-  --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1.00rem);
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
+  --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
   --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
   --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
-  --step-2: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+  --step-2: clamp(1.62rem, calc(1.5rem + 0.58vw), 1.95rem);
   --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
   --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
-  --step-5: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.81rem);
+  --step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.81rem);
 
   /* Utopia Fluid Space Scale */
-  --space-3xs: clamp(0.31rem, calc(0.31rem + 0.00vw), 0.31rem);
+  --space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
   --space-2xs: clamp(0.56rem, calc(0.54rem + 0.11vw), 0.63rem);
   --space-xs: clamp(0.88rem, calc(0.85rem + 0.11vw), 0.94rem);
   --space-s: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
   --space-m: clamp(1.69rem, calc(1.62rem + 0.33vw), 1.88rem);
-  --space-l: clamp(2.25rem, calc(2.16rem + 0.43vw), 2.50rem);
+  --space-l: clamp(2.25rem, calc(2.16rem + 0.43vw), 2.5rem);
   --space-xl: clamp(3.38rem, calc(3.24rem + 0.65vw), 3.75rem);
-  --space-2xl: clamp(4.50rem, calc(4.33rem + 0.87vw), 5.00rem);
-  --space-3xl: clamp(6.75rem, calc(6.49rem + 1.30vw), 7.50rem);
+  --space-2xl: clamp(4.5rem, calc(4.33rem + 0.87vw), 5rem);
+  --space-3xl: clamp(6.75rem, calc(6.49rem + 1.3vw), 7.5rem);
+
+  /* Border Radius */
+  --radius-s: 0.5rem;
+  --radius-m: 1rem;
+  --radius-l: 1.5rem;
 
   /* Color Palette */
-  --color-white: #ffffff;
-  --color-charcoal-blue: #1a252f;
-  --color-pink: #b85c7a;
-  --color-green: #6b9556;
+  --color-white: #fffffe;
+  --color-charcoal-blue: #232946;
+  --color-pink: #eebbc3;
+  --color-blue: #b8c1ec;
+  --color-charcoal-blue-light: #2e3450;
 
   /* Light Theme Default */
-  --color-background: var(--color-white);
+  --color-background: var(--color-pink);
   --color-text: var(--color-charcoal-blue);
-  --color-button: var(--color-pink);
-  --color-button-hover: var(--color-green);
+  --color-button: var(--color-blue);
+  --color-button-text: var(--color-charcoal-blue);
+  --color-button-hover: var(--color-charcoal-blue);
+  --color-button-hover-text: var(--color-white);
+  --color-button-reversed: var(--color-charcoal-blue);
+  --color-button-reversed-hover: var(--color-pink);
+  --color-button-reversed-text: var(--color-white);
+  --color-button-reversed-hover-text: var(--color-charcoal-blue);
   --color-focus: var(--color-charcoal-blue);
+  --color-link: var(--color-charcoal-blue);
+  --color-link-border: var(--color-blue);
+  --color-link-border-hover: var(--color-charcoal-blue);
+  --card-background-color: var(--color-blue);
+  --card-border-color: var(--color-charcoal-blue);
+
+  /* Light Theme */
+  --light-color-background: var(--color-gray-100);
 }
 
 /* Dark Theme Override */
@@ -43,6 +63,17 @@
   --color-background: var(--color-charcoal-blue);
   --color-text: var(--color-white);
   --color-button: var(--color-pink);
-  --color-button-hover: var(--color-green);
+  --color-button-text: var(--color-charcoal-blue);
+  --color-button-hover: var(--color-blue);
+  --color-button-hover-text: var(--color-charcoal-blue);
+  --color-button-reversed: var(--color-pink);
+  --color-button-reversed-hover: var(--color-blue);
+  --color-button-reversed-text: var(--color-charcoal-blue);
+  --color-button-reversed-hover-text: var(--color-charcoal-blue);
   --color-focus: var(--color-white);
+  --color-link: var(--color-pink);
+  --color-link-border: var(--color-charcoal-blue-light);
+  --color-link-border-hover: var(--color-blue);
+  --card-background-color: var(--color-charcoal-blue-light);
+  --card-border-color: black;
 }

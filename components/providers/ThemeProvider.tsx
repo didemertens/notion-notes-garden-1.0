@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useLayoutEffect, useCallback, useMemo } from 'react';
-import { useNetworkStatus } from '../hooks/useNetworkStatus';
+import { useNetworkStatus } from '../../hooks/useNetworkStatus';
 
 type Theme = 'light' | 'dark';
 

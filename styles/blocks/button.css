@@ -13,27 +13,47 @@ button:focus-visible {
   justify-content: center;
   padding: var(--space-s) var(--space-m);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-s);
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s ease;
   cursor: pointer;
+  border: 3px solid var(--card-border-color);
+  font-weight: bold;
 }
 
 /* Button Variants */
 .button--primary {
   background-color: var(--color-button);
-  color: var(--color-white);
+  color: var(--color-button-text);
 }
 
 .button--primary:hover {
   background-color: var(--color-button-hover);
+  color: var(--color-button-hover-text);
+}
+
+/* Reversed colours */
+.button--primary[data-state='reversed'] {
+  background-color: var(--color-button-reversed);
+  color: var(--color-button-reversed-text);
+}
+
+.button--primary[data-state='reversed']:hover {
+  background-color: var(--color-button-reversed-hover);
+  color: var(--color-button-reversed-hover-text);
 }
 
 /* Button Sizes */
 .button--large {
   padding: var(--space-m) var(--space-l);
   font-size: var(--step-1);
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 1px solid var(--color-button);
+  color: var(--color-button);
 }
 
 /* Theme Toggle Button */
@@ -43,9 +63,23 @@ button:focus-visible {
   padding: var(--space-2xs);
   border-radius: 50%;
   color: var(--color-text);
-  transition: transform 0.2s ease-in, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease-in,
+    opacity 0.2s ease;
   opacity: 0;
-  animation: fadeIn 0.3s ease-in-out forwards;
+  visibility: hidden;
+}
+
+.theme-toggle--ready {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: opacity 0.01s linear;
+  }
 }
 
 .theme-toggle:hover {
@@ -53,6 +87,10 @@ button:focus-visible {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
