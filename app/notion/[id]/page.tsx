@@ -19,7 +19,7 @@ export default async function NotionPage({
               <h2 className="text-medium">{page?.title}</h2>
               <Link
                 className="button button--primary button--small mt-auto"
-                href={`/notion/${page?.id}`}
+                href={`/notion/quiz`}
                 data-state="reversed"
               >
                 Generate quiz →

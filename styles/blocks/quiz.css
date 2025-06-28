@@ -1,0 +1,49 @@
+/* ==========================================================================
+   BLOCK - QUIZ
+   ========================================================================== */
+
+.quiz-container {
+  width: 100%;
+  max-width: 40rem;
+  margin-bottom: var(--space-l);
+}
+
+.message {
+  padding: var(--space-s);
+  margin-bottom: var(--space-s);
+  border-radius: var(--radius-s);
+  background-color: var(--card-background-color);
+  border: 2px solid var(--card-border-color);
+  text-align: left;
+}
+
+.message strong {
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.quiz-form {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.quiz-input {
+  width: 100%;
+  padding: var(--space-s);
+  border: 3px solid var(--card-border-color);
+  border-radius: var(--radius-s);
+  background-color: var(--card-background-color);
+  color: var(--color-text);
+  font-size: var(--step-0);
+  transition: border-color 0.2s ease;
+}
+
+.quiz-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.quiz-input::placeholder {
+  color: var(--color-text-secondary);
+}
